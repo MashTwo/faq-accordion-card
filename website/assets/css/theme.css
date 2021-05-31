@@ -1,0 +1,147 @@
+/*
+*   Variables
+*/
+:root {
+    /* Text */
+    --very-dark-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+
+    /* Gradient */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    /* Divider */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+/*
+*   Globals
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(180deg, var(--soft-violet), var(--soft-blue));
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1rem;
+}
+
+/*
+*   Typography
+*/
+h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+button {
+    color: var(--very-dark-blue);
+    font-size: 0.95rem;
+}
+
+p {
+    color: var(--dark-grayish-blue);
+    font-size: 0.9rem;
+}
+
+/*
+*   Structure
+*/
+.container {
+    max-width: 920px;
+    padding: 1rem 2rem 0;
+    margin: 0 auto;
+}
+
+.faq-card {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1.5rem;
+    margin-top: 8rem;
+    width: 100%;
+}
+
+/* Image section */
+.image-section {
+    background: url('../images/bg-pattern-mobile.svg') no-repeat;
+    text-align: center;
+}
+
+.image-section img {
+    margin-top: -6.6rem;
+    margin-left: -2rem;
+    
+}
+
+/* Accordion section */
+.accordion-section {
+    padding: 1.5rem;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    padding: 1rem 0;
+}
+
+.accordion-item:last-child {
+    border: none;
+}
+
+.accordion-header {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    position: relative;
+}
+
+.accordion-header::after {
+    content: "";
+    background-image: url('../images/icon-arrow-down.svg');
+    height: 7px;
+    width: 10px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+.accordion-content {
+    padding-top: 1rem;
+}
+
+@media (min-width: 48em) {
+    .container {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+
+    .faq-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .image-section {
+        align-self: center;
+        background-image: url('../images/bg-pattern-desktop.svg');
+        background-size: cover;
+    }
+
+    .image-section img {
+        margin: 0 0 0 -8rem;
+        width: 100%;
+    }
+
+    .accordion-section {
+        padding: 4rem 4rem 4rem 0;
+    }   
+}
